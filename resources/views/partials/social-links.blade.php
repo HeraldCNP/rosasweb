@@ -1,7 +1,8 @@
 <div class="buttons-social-media-share">
     <ul class="share-buttons">
         <li>
-            <a href="https://www.facebook.com/sharer/sharer.php?u={{ request()->fullUrl() }}&title={{ $description }}" title="Share on Facebook" target="_blank"><img alt="Compartir en Facebook" src="/img/flat_web_icon_set/Facebook.png"></a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u={{ request()->fullUrl() }}" title="Compartir en Facebook" target="_blank"><img alt="Compartir en Facebook" src="/img/flat_web_icon_set/Facebook.png"></a>
+{{--            <a href="http://www.facebook.com/sharer.php?s=100&p[url]={{ request()->fullUrl() }}&p[title]={{ $post->title }}&p[summary]={{ $post->excerpt }}&p[images][0]={{ $post->photos->first()->url }}" title="Share on Facebook" target="_blank"><img alt="Compartir en Facebook" src="/img/flat_web_icon_set/Facebook.png"></a>--}}
         </li>
         <li>
             <a href="https://twitter.com/intent/tweet?url={{ request()->fullUrl() }}&text={{ $description }}&via=SEDESPOTOSÍ&hashtags=SEDES" target="_blank" title="Tweet"><img alt="Tweet" src="/img/flat_web_icon_set/Twitter.png"></a>

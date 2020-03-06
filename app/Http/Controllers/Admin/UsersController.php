@@ -55,7 +55,8 @@ class UsersController extends Controller
             'email' => 'required|email|max:255|unique:users'
         ]);
         //generar un password
-        $data['password'] = str_random(8);
+//        $data['password'] = str_random(8);
+        $data['password'] = 123456;
         //Creamos el usuario
         $user = User::create($data);
         //asignamos los roles
@@ -71,7 +72,7 @@ class UsersController extends Controller
         }
 
         //enviamos el email
-        UserWasCreated::dispatch($user, $data['password']);
+//        UserWasCreated::dispatch($user, $data['password']);
         //regresamos al usuario
         return redirect()->route('admin.users.index')->withFlash('El usuario ha sido creado');
 
@@ -128,8 +129,9 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        //
+        $user->delete();
+        return back()->withFlash('Usuario Eliminado');
     }
 }

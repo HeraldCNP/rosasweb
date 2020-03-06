@@ -3,7 +3,15 @@
 @section('meta-description', $post->excerpt)
 
 @section('metas')
-
+    <meta property="og:url"                content="{{ request()->fullUrl() }}" />
+    <meta property="og:type"               content="article" />
+    <meta property="og:title"              content="{{ $post->title }}" />
+    <meta property="og:description"        content="{{ $post->excerpt }}" />
+    <meta property="og:image"              content="https://sedespotosi.com/{{ $post->photos->first()->url }}" />
+    <meta property="og:image:secure_url" content="https://sedespotosi.com/{{ $post->photos->first()->url }}" />
+    <meta property="og:image:width" content="980" />
+    <meta property="og:image:height" content="735" />
+    <meta property="og:image:alt" content="{{ $post->excerpt }}" />
 @endsection
 @section('noticia')
 

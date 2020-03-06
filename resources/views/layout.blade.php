@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/ico" href="{{ asset('images/icono.ico') }}">
@@ -8,6 +7,7 @@
     <title>
         @yield('meta-title', '| SEDES')
     </title>
+    @yield('metas')
     <meta name="description" content="@yield('meta-description')">
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
 

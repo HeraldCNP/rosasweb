@@ -38,7 +38,7 @@
                             <label for="">Permisos</label>
                             @include('admin.permissions.checkboxes')
                         </div>
-                        <span class="help-block">La contraseña será generada y enviada al Email del nuevo usuario</span>
+                        <span class="help-block">La contraseña generada es "123456" cambiarla en su proximo inicio de sesion</span>
 
                         <button class="btn btn-primary btn-block">Crear Usuario</button>
                     </form>

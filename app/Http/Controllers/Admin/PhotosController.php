@@ -18,6 +18,12 @@ class PhotosController extends Controller
             'photo' => 'required|image|max:2048',
         ]);
 
+        ##FUNCIONAR EN HOSTING
+//        $post->photos()->create([
+//            'url' => 'storage/public/'.request()->file('photo')->store('posts','public')
+//        ]);
+
+        ##FUNCIONAR EN LOCAL
         $post->photos()->create([
             'url' => 'storage/'.request()->file('photo')->store('posts','public')
         ]);
