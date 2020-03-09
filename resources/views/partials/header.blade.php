@@ -82,9 +82,9 @@
                             Comunicación <i class=""></i>
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="noticias.html">Noticias</a>
+                            <a class="dropdown-item" href="{{ route('posts.index') }}">Noticias</a>
                             <a class="dropdown-item" href="{{ route('pages.galeria') }}">Galería</a>
-                            <a class="dropdown-item" href="videos.html">Videos</a>
+{{--                            <a class="dropdown-item" href="videos.html">Videos</a>--}}
                         </div>
                     </li>
                     <li class="nav-item">
@@ -94,9 +94,9 @@
                     </li>
                 </ul>
                 <div class="search-add float-right">
-                    <form method="post">
+                    <form method="GET" action="{{ route('posts.buscar') }}">
                         <div class="form-group">
-                            <input type="search" name="field-name" value="" placeholder="Buscar" required="">
+                            <input type="search" name="busqueda" placeholder="Buscar" required>
                             <button type="submit" class="search-btn"><span class="lni-search"></span></button>
                         </div>
                     </form>
@@ -141,9 +141,9 @@
                     Comunicación
                 </a>
                 <ul class="dropdown">
-                    <li><a href="#">Noticias</a></li>
+                    <li><a href="{{ route('posts.index') }}">Noticias</a></li>
                     <li><a href="{{ route('pages.galeria') }}">Galería</a></li>
-                    <li><a href="#">Videos</a></li>
+{{--                    <li><a href="#">Videos</a></li>--}}
                 </ul>
             </li>
             <li>

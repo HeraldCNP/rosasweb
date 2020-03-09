@@ -35,6 +35,8 @@ Route::get('galeria', 'RoutesController@galeria')->name('pages.galeria');
 
 
 Route::get('noticia/{post}', 'PostsController@show')->name('posts.show');
+Route::get('noticias', 'PostsController@index')->name('posts.index');
+Route::get('buscar', 'PostsController@busqueda')->name('posts.buscar');
 Route::get('categorias/{category}', 'CategoriesController@show')->name('categories.show');
 Route::get('tags/{tag}', 'TagsController@show')->name('tags.show');
 
