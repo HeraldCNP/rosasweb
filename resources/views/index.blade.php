@@ -215,7 +215,7 @@
                 <div class="col-12">
                     <div class="section-title-header text-center">
                         <h2 class="section-title">Galería</h2>
-                        <p>Duis aute irure dolor in reprehed in volupted velit esse dolore</p>
+                        <p>Imágenes de las actividades más relevantes realizadas por la Institución</p>
                     </div>
                 </div>
             </div>
