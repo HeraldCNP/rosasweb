@@ -19,4 +19,32 @@ class PostsController extends Controller
         }
         abort(404);
     }
+
+    public function index()
+    {
+        $posts = Post::latest()->paginate(4);
+        $post = Post::inRandomOrder()
+            ->take(3)
+            ->get();
+        return view('posts.index', compact('post', 'posts'));
+
+    }
+    public function busqueda(Request $request)
+    {
+//        dd($request->get('busqueda'));
+        if ($request->get('busqueda')) {
+            $posts = Post::where("body", "LIKE", "%{$request->get('busqueda')}%")
+                ->paginate(5);
+
+
+
+        }
+        if($posts){
+            return view('posts.busqueda', compact('posts'));
+        }else{
+            $posts = "nada";
+            return view('posts.busqueda', compact('posts'));
+        }
+    }
+
 }

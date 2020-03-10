@@ -1,27 +1,28 @@
 @if ($paginator->hasPages())
-    <nav aria-label="Page navigation example">
+    <nav>
         <ul class="pagination justify-content-center">
         {{-- Previous Page Link --}}
         @if ($paginator->onFirstPage())
-            <li class="page-item disabled"><span>&laquo;</span></li>
+            <li class="page-item disabled mr-2"><a class="btn btn-common disabled"><span>&laquo;</span></a></li>
         @else
-            <li class="page-item"><a href="{{ $paginator->previousPageUrl() }}" rel="prev">&laquo;</a></li>
+            <li class="page-item mr-2"><a class="btn btn-common" href="{{ $paginator->previousPageUrl() }}" rel="prev">&laquo;</a></li>
         @endif
 
         {{-- Pagination Elements --}}
         @foreach ($elements as $element)
             {{-- "Three Dots" Separator --}}
             @if (is_string($element))
-                <li class="page-item disabled"><span>{{ $element }}</span></li>
+                <li class="page-item disabled mr-2"><span>{{ $element }}</span></li>
             @endif
 
             {{-- Array Of Links --}}
             @if (is_array($element))
                 @foreach ($element as $page => $url)
                     @if ($page == $paginator->currentPage())
-                        <li class="page-item active"><span>{{ $page }}</span></li>
+                        <li class="page-item active mr-2"><a class="page-link" style="background-color: red;
+    border-color: black;"><span>{{ $page }}</span></a></li>
                     @else
-                        <li class="page-item"><a class="page-link" href="{{ $url }}">{{ $page }}</a></li>
+                        <li class="page-item mr-2"><a class="page-link" href="{{ $url }}">{{ $page }}</a></li>
                     @endif
                 @endforeach
             @endif
@@ -29,9 +30,9 @@
 
         {{-- Next Page Link --}}
         @if ($paginator->hasMorePages())
-            <li class="page-item"><a class="page-link" href="{{ $paginator->nextPageUrl() }}" rel="next">&raquo;</a></li>
+            <li class="page-item mr-2"><a class="page-link btn btn-common" href="{{ $paginator->nextPageUrl() }}" rel="next">&raquo;</a></li>
         @else
-            <li class="page-item disabled"><span>&raquo;</span></li>
+            <li class="page-item disabled mr-2"><a class="btn btn-common disabled"><span>&raquo;</span></a></li>
         @endif
     </ul>
     </nav>
