@@ -210,7 +210,7 @@
 
 @section('galeria')
     <section class="latest-property section-padding wow fadeInUp animated">
-        <div class="container">
+        <div class="container" id="galeria">
             <div class="row">
                 <div class="col-12">
                     <div class="section-title-header text-center">
@@ -222,102 +222,24 @@
             <div class="row">
                 <div class="col-md-12 wow fadeIn" data-wow-delay="0.8s">
                     <div id="latest-property" class="owl-carousel">
-                        <div class="item">
-                            <div class="property-main">
-                                <div class="property-wrap">
-                                    <div class="property-item">
-                                        <div class="item-thumb">
-                                            <a class="hover-effect" href="#">
-                                                <img class="img-fluid" src="assets/img/property/house-1.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="item-body">
-                                            <h3 class="property-title"><a href="#">Amazing oceanfront apartment</a></h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="property-main">
-                                <div class="property-wrap">
-                                    <div class="property-item">
-                                        <div class="item-thumb">
-                                            <a class="hover-effect" href="#">
-                                                <img class="img-fluid" src="assets/img/property/house-2.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="item-body">
-                                            <h3 class="property-title"><a href="#">Family Condo</a></h3>
+                        @foreach($images as $image)
+                            <div class="item">
+                                <div class="property-main">
+                                    <div class="property-wrap">
+                                        <div class="property-item">
+                                            <div class="item-thumb">
+                                                <a class="hover-effect" href="#galeria">
+                                                    <img class="img-fluid" src="{{ url($image->filename) }}" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="item-body">
+                                                <h3 class="property-title"><a href="#">{{ $image->title }}</a></h3>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="item">
-                            <div class="property-main">
-                                <div class="property-wrap">
-                                    <div class="property-item">
-                                        <div class="item-thumb">
-                                            <a class="hover-effect" href="#">
-                                                <img class="img-fluid" src="assets/img/property/house-3.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="item-body">
-                                            <h3 class="property-title"><a href="#">Guaranteed modern home</a></h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="property-main">
-                                <div class="property-wrap">
-                                    <div class="property-item">
-                                        <div class="item-thumb">
-                                            <a class="hover-effect" href="#">
-                                                <img class="img-fluid" src="assets/img/property/house-4.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="item-body">
-                                            <h3 class="property-title"><a href="#">Family home for sale</a></h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="property-main">
-                                <div class="property-wrap">
-                                    <div class="property-item">
-                                        <div class="item-thumb">
-                                            <a class="hover-effect" href="#">
-                                                <img class="img-fluid" src="assets/img/property/house-5.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="item-body">
-                                            <h3 class="property-title"><a href="#">Amazing oceanfront apartment</a></h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="property-main">
-                                <div class="property-wrap">
-                                    <div class="property-item">
-                                        <div class="item-thumb">
-                                            <a class="hover-effect" href="#.html">
-                                                <img class="img-fluid" src="assets/img/property/house-6.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="item-body">
-                                            <h3 class="property-title"><a href="property.html">Luxury home for sale</a></h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

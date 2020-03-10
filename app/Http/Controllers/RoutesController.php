@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Image;
 use App\Post;
 use Illuminate\Http\Request;
 
@@ -10,32 +11,16 @@ class RoutesController extends Controller
     public function home(Request $request)
     {
 
-
-
             //        $posts = Post::all()->take(2);
-            $posts = Post::latest()
-                ->take(3)
-                ->get();
-            return view('index', compact('posts'));
+        $images = Image::all();
+        $posts = Post::latest()
+            ->take(3)
+            ->get();
+        return view('index', compact('posts', 'images'));
 
     }
 
-    public function dsf(Request $request)
-    {
-//        $input = $request->all();
 
-        if($request->get('busqueda')){
-            $noticias = Noticia::where("noticiero_turno", "LIKE", "%{$request->get('busqueda')}%")
-                ->paginate(5);
-            return view('NOMBRE_VISTA')->with('buscar', $noticias);
-        }
-        //else{
-        //  $noticias = Noticia::paginate(5);
-        //}
-
-        // return response($noticias);
-        return view('NOMBRE_VISTA');
-    }
 
     public function articles()
     {

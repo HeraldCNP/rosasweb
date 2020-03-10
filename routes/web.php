@@ -58,6 +58,9 @@ Route::group(['prefix' => 'admin',
 
         Route::post('posts/{post}/photos', 'PhotosController@store')->name('admin.posts.photos.store');
         Route::delete('photos/{photo}', 'PhotosController@destroy')->name('admin.photos.destroy');
+
+        //Images
+        Route::resource('images', 'ImageController', ['except' => 'show', 'as' => 'admin']);
 });
 
 

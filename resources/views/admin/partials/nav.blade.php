@@ -25,6 +25,21 @@
             </li>
         </ul>
     </li>
+    <li class="treeview {{ request()->is('admin/images*') ? 'active' : '' }}">
+        <a href="#"><i class="fa fa-bars"></i> <span>Imagenes</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+        </a>
+        <ul class="treeview-menu">
+            <li {{ request()->is('admin/images') ? 'class=active' : '' }}>
+                <a href="{{ route('admin.images.index') }}"><i class="fa fa-eye"></i>Ver todas las imagenes</a>
+            </li>
+            <li>
+                <a href="{{ route('admin.images.create') }}"><i class="fa fa-plus"></i>Crear nuevo</a>
+            </li>
+        </ul>
+    </li>
     {{--probando--}}
     {{--<li class="treeview {{ request()->is('admin/posts*') ? 'active' : '' }}">--}}
         {{--<a href="#"><i class="fa fa-bars"></i> <span>Actividades</span>--}}

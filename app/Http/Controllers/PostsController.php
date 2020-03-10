@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Image;
 use App\Post;
 use Illuminate\Http\Request;
 
@@ -12,6 +13,7 @@ class PostsController extends Controller
         $posts = Post::latest()
             ->take(3)
             ->get();
+
 
         if ($post->isPublished() || auth()->check())
         {
@@ -29,6 +31,8 @@ class PostsController extends Controller
         return view('posts.index', compact('post', 'posts'));
 
     }
+
+
     public function busqueda(Request $request)
     {
 //        dd($request->get('busqueda'));
