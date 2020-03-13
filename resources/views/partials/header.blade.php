@@ -84,7 +84,7 @@
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="{{ route('posts.index') }}">Noticias</a>
                             <a class="dropdown-item" href="{{ route('pages.galeria') }}">Galería</a>
-{{--                            <a class="dropdown-item" href="videos.html">Videos</a>--}}
+                            <a class="dropdown-item" href="{{ route('pages.documentos') }}">Documentos</a>
                         </div>
                     </li>
                     <li class="nav-item">
@@ -143,6 +143,8 @@
                 <ul class="dropdown">
                     <li><a href="{{ route('posts.index') }}">Noticias</a></li>
                     <li><a href="{{ route('pages.galeria') }}">Galería</a></li>
+                    <li><a href="{{ route('pages.documentos') }}">Documentos</a></li>
+
 {{--                    <li><a href="#">Videos</a></li>--}}
                 </ul>
             </li>

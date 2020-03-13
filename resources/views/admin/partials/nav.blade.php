@@ -40,6 +40,21 @@
             </li>
         </ul>
     </li>
+    <li class="treeview {{ request()->is('admin/documents*') ? 'active' : '' }}">
+        <a href="#"><i class="fa fa-bars"></i> <span>Documentos</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+        </a>
+        <ul class="treeview-menu">
+            <li {{ request()->is('admin/documents') ? 'class=active' : '' }}>
+                <a href="{{ route('admin.documents.index') }}"><i class="fa fa-eye"></i>Ver todos los Documentos</a>
+            </li>
+            <li>
+                <a href="{{ route('admin.documents.create') }}"><i class="fa fa-plus"></i>Crear nuevo</a>
+            </li>
+        </ul>
+    </li>
     {{--probando--}}
     {{--<li class="treeview {{ request()->is('admin/posts*') ? 'active' : '' }}">--}}
         {{--<a href="#"><i class="fa fa-bars"></i> <span>Actividades</span>--}}

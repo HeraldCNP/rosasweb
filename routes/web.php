@@ -30,6 +30,7 @@ Route::get('unidad/seguros', 'RoutesController@seguros')->name('pages.seguros');
 Route::get('articulos', 'RoutesController@articles')->name('pages.articles');
 Route::get('contacto', 'RoutesController@contacto')->name('pages.contacto');
 Route::get('galeria', 'RoutesController@galeria')->name('pages.galeria');
+Route::get('documentos', 'RoutesController@documentos')->name('pages.documentos');
 
 
 
@@ -61,6 +62,7 @@ Route::group(['prefix' => 'admin',
 
         //Images
         Route::resource('images', 'ImageController', ['except' => 'show', 'as' => 'admin']);
+        Route::resource('documents', 'DocumentController', ['except' => 'show', 'as' => 'admin']);
 });
 
 

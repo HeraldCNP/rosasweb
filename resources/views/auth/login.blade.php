@@ -90,7 +90,7 @@
         {{--</div>--}}
         <!-- /.social-auth-links -->
 
-        <a href="{{ route('password.request') }}">Restablecer Contraseña</a><br>
+{{--        <a href="{{ route('password.request') }}">Restablecer Contraseña</a><br>--}}
         {{--<a href="register.html" class="text-center">Register a new membership</a>--}}
 
     </div>

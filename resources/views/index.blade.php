@@ -347,19 +347,11 @@
                                 </a>
                             </div>0
                             @elseif($post->photos->count() > 1)
-                                @foreach($post->photos->take(1) as $photo)
-                                    @if($loop->iteration === 1)
-                                        <div class="overlay">
-                                            {{ $post->photos->count() }} Imagenes
-                                        </div>
-                                    @endif
-                                @endforeach
                                     <div class="blog-image">
                                         <a class="example-image-link" href="{{ url($post->photos->first()->url) }}" data-lightbox="single" data-title="{{ $post->title }}" >
                                             <img class="img-fluid example-image-link" src="{{ url($photo->url) }}" alt="">
                                         </a>
                                     </div>
-
                             @elseif($post->iframe)
                                 <div class="embed-responsive embed-responsive-16by9">
                                     {!! $post->iframe !!}

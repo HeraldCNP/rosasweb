@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Document;
 use App\Image;
 use App\Post;
 use Illuminate\Http\Request;
@@ -110,5 +111,11 @@ class RoutesController extends Controller
     public function organigrama()
     {
         return view('sedes.organigrama');
+    }
+
+    public function documentos()
+    {
+        $documents = Document::all();
+        return view('sedes.documentos', compact('documents'));
     }
 }

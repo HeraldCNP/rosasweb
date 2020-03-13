@@ -45,7 +45,7 @@ class ImageController extends Controller
 
         $validator = Validator::make($request->all(),[
             'title' => 'min:5',
-            'filename' => 'max:500000|dimensions:min_width=200, min_height=200|mimes:jpeg,png,jpg'
+            'filename' => 'max:500000|dimensions:min_width=560, min_height=380|image'
         ]);
         $errors = $validator->errors();
         if ($validator->fails()){
@@ -111,8 +111,9 @@ class ImageController extends Controller
      */
     public function destroy(Image $image)
     {
+//        dd($image);
         $image->delete();
-
+//        Storage::disk('publicImages')->delete($image);
         return back()->withFlash('Imagen Eliminada');
     }
 }

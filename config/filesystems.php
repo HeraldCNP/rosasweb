@@ -60,6 +60,18 @@ return [
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],
+        'publicCovers' => [
+            'driver' => 'local',
+            'root' => public_path().'/uploads/images/covers',
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
+        'publicPdf' => [
+            'driver' => 'local',
+            'root' => public_path().'/uploads/documents',
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
 
         's3' => [
             'driver' => 's3',
