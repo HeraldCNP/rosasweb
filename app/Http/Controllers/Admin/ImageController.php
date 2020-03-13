@@ -45,6 +45,7 @@ class ImageController extends Controller
 
         $validator = Validator::make($request->all(),[
             'title' => 'min:5',
+            'category' => 'required',
             'filename' => 'max:500000|dimensions:min_width=560, min_height=380|image'
         ]);
         $errors = $validator->errors();
@@ -63,6 +64,7 @@ class ImageController extends Controller
             $ruta = 'uploads/images/'.$fname;
             $image = new Image();
             $image->title = $request->title;
+            $image->category = $request->category;
             $image->filename = $ruta;
             $image->save();
             return redirect()->route('admin.images.index')->withFlash('La imagen ha sido creada');

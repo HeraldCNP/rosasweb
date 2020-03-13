@@ -60,6 +60,7 @@
 
     @yield('content')
     @yield('noticia')
+
     @include('partials.footer')
 
 
@@ -85,7 +86,6 @@
     <script src="{{ asset('assets/js/jquery-min.js') }}"></script>
     <script src="{{ asset('assets/js/popper.min.js') }}"></script>
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('assets/js/lightbox-plus-jquery.min.js') }}"></script>
     <script src="{{ asset('assets/js/jquery.mixitup.js') }}"></script>
     <script src="{{ asset('assets/js/jquery.counterup.min.js') }}"></script>
     <script src="{{ asset('assets/js/ion.rangeSlider.js') }}"></script>

@@ -68,10 +68,6 @@ class RoutesController extends Controller
         return view('unidades.epidemiologia');
     }
 
-    public function galeria()
-    {
-        return view('galeria');
-    }
 
     public function juridica()
     {
@@ -117,5 +113,11 @@ class RoutesController extends Controller
     {
         $documents = Document::all();
         return view('sedes.documentos', compact('documents'));
+    }
+
+    public function galery()
+    {
+        $images = Image::all();
+        return view('sedes.galeria', compact('images'));
     }
 }

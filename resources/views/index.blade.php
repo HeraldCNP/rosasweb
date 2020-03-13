@@ -228,12 +228,12 @@
                                     <div class="property-wrap">
                                         <div class="property-item">
                                             <div class="item-thumb">
-                                                <a class="hover-effect" href="#galeria">
+                                                <a class="hover-effect" href="{{ route('pages.galeria') }}">
                                                     <img class="img-fluid" src="{{ url($image->filename) }}" alt="">
                                                 </a>
                                             </div>
                                             <div class="item-body">
-                                                <h3 class="property-title"><a href="#">{{ $image->title }}</a></h3>
+                                                <h3 class="property-title"><a href="{{ route('pages.galeria') }}">{{ $image->title }}</a></h3>
                                             </div>
                                         </div>
                                     </div>

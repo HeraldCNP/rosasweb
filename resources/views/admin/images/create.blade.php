@@ -23,6 +23,18 @@
                             <label for="name">Titulo:</label>
                             <input type="text" name="title" class="form-control" value="{{ old('title') }}">
                         </div>
+                        <div class="form-group">
+                            <label for="category">Categoria:</label>
+                            <select name="category" id="category" class="form-control">
+                                <option value="all">Todos</option>
+                                <option value="planning">Planificación</option>
+                                <option value="hospital">Hospitales</option>
+                                <option value="campaign">Campañas</option>
+                                <option value="workshop">Talleres</option>
+                                <option value="unit">Unidades</option>
+                            </select>
+                        </div>
+
 
                         <div class="form-group">
                             <label for="email">Imagen:</label>
