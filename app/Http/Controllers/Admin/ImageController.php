@@ -61,7 +61,7 @@ class ImageController extends Controller
             Storage::disk('publicImages')->put($fname, File::get($filename));
 
             #2.Insertando a la DB
-            $ruta = 'uploads/images/'.$fname;
+            $ruta = 'uploads/uploads/images/'.$fname;
             $image = new Image();
             $image->title = $request->title;
             $image->category = $request->category;

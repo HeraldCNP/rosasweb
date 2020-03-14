@@ -27,6 +27,10 @@ Route::get('unidad/redes', 'RoutesController@redes')->name('pages.redes');
 Route::get('unidad/promocion', 'RoutesController@promocion')->name('pages.promocion');
 Route::get('unidad/seguros', 'RoutesController@seguros')->name('pages.seguros');
 
+Route::get('covidpais', 'CovidController@porpais')->name('covid.pais');
+Route::get('covidregion', 'CovidController@porregion')->name('covid.region');
+
+
 Route::get('articulos', 'RoutesController@articles')->name('pages.articles');
 Route::get('contacto', 'RoutesController@contacto')->name('pages.contacto');
 Route::get('galeria', 'RoutesController@galery')->name('pages.galeria');

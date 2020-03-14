@@ -57,11 +57,11 @@
                                         <div class="widget-content">
                                             @if($po->photos->count() === 1)
                                                 <div class="widget-thumb">
-                                                    <a href="{{ $po->url }}"><img src="{{ url($po->photos->first()->url) }}" alt=""></a>
+                                                    <a href="noticia/{{ $po->url }}"><img src="{{ url($po->photos->first()->url) }}" alt=""></a>
                                                 </div>
                                             @endif
                                             <div class="widget-text">
-                                                <h5><a href="{{ $po->url }}">{{ $po->title }}</a></h5>
+                                                <h5><a href="noticia/{{ $po->url }}">{{ $po->title }}</a></h5>
                                                 <span>{{ $po->published_at->format('M/d/Y') }}</span>
                                             </div>
                                             <div class="clearfix"></div>

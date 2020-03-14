@@ -44,12 +44,195 @@
     <!-- Icon Style -->
     <link href="{{ asset('assets/ionicons/css/ionicons.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
-
+    <style>
+        .cajaf{
+            position: fixed;
+            bottom: 60px;
+            right: 10px;
+            width: 60px;
+            height: 60px;
+            z-index: 100000;
+            -webkit-animation: swing 2s infinite;
+            animation: swing 2s infinite;
+        }
+        .cajaf:hover{
+            height: 240px;
+            -webkit-animation: none;
+            animation: none;
+        }
+        .cajaf:hover .caja1{
+            visibility: visible;
+            bottom: 70px;
+        }
+        .cajaf:hover .caja2{
+            visibility: visible;
+            bottom: 140px;
+        }
+        .cajaf:hover .caja3{
+            visibility: visible;
+            bottom: 210px;
+        }
+        .caja2:hover:before,.caja1:hover:before,.caja3:hover:before{
+            visibility: visible;
+            color:#000;
+        }
+        .btn_roundf{
+            position: absolute;
+            bottom:0 ;
+            right: 0;
+            border:1px solid #FF1700;
+            background: #FF1700;
+            color:#fff;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            z-index: 90090;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            font-size: .8em;
+        }
+        .caja1{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            border:1px solid #1da1f2;
+            background: #1da1f2;
+            color: #fff;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            z-index: 90080;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            -webkit-transition: all .3s;
+            visibility: hidden;
+        }
+        .caja2{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            border:1px solid #283593;
+            background: #283593;
+            color:#fff;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            z-index: 9070;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            visibility: hidden;
+            -webkit-transition: all .6s;
+        }
+        .caja3{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            border:1px solid #f09433;
+            background: #f09433;
+            background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+            background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+            color: #fff;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            z-index: 9050;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            -webkit-transition: all .9s;
+            visibility: hidden;
+        }
+        @-webkit-keyframes swing
+        {
+            15%
+            {
+                -webkit-transform: translateX(8px);
+                transform: translateX(8px);
+            }
+            30%
+            {
+                -webkit-transform: translateX(-8px);
+                transform: translateX(-8px);
+            }
+            50%
+            {
+                -webkit-transform: translateX(5px);
+                transform: translateX(5px);
+            }
+            65%
+            {
+                -webkit-transform: translateX(-5px);
+                transform: translateX(-5px);
+            }
+            80%
+            {
+                -webkit-transform: translateX(3px);
+                transform: translateX(3px);
+            }
+            100%
+            {
+                -webkit-transform: translateX(0);
+                transform: translateX(0);
+            }
+        }
+        @keyframes swing
+        {
+            15%
+            {
+                -webkit-transform: translateX(8px);
+                transform: translateX(8px);
+            }
+            30%
+            {
+                -webkit-transform: translateX(-8px);
+                transform: translateX(-8px);
+            }
+            50%
+            {
+                -webkit-transform: translateX(5px);
+                transform: translateX(5px);
+            }
+            65%
+            {
+                -webkit-transform: translateX(-5px);
+                transform: translateX(-5px);
+            }
+            80%
+            {
+                -webkit-transform: translateX(3px);
+                transform: translateX(3px);
+            }
+            100%
+            {
+                -webkit-transform: translateX(0);
+                transform: translateX(0);
+            }
+        }
+    </style>
 {{--    @stack('styles')--}}
 
 </head>
 
 <body>
+    <div class="cajaf">
+        <a href="#" class="btn_roundf" title="COVID 19" alt="corona virus">COVID-19</a>
+        <a class="caja1" target="_blank" href="{{route('covid.region')}}" alt="covid region" title="covid region">Por Region</a>
+        <a class="caja2" target="_blank" href="{{route('covid.pais')}}" alt="covid pais" title="covid pais">Por Pais</a>
+    </div>
+
     @include('partials.header')
 
     @yield('banner')
@@ -81,6 +264,56 @@
     <div id="preloader">
         <div class="loader" id="loader-1"></div>
     </div>
+
+
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+        <div class="pswp__bg"></div>
+        <div class="pswp__scroll-wrap">
+
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+
+            <div class="pswp__ui pswp__ui--hidden">
+
+                <div class="pswp__top-bar">
+
+                    <div class="pswp__counter"></div>
+
+                    <button class="pswp__button pswp__button--close" title="Salir (Esc)"></button>
+                    <button class="pswp__button pswp__button--fs" title="Pantalla completa"></button>
+                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                            <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div>
+
+                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                </button>
+
+                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                </button>
+
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
 
     <!--   Core JS Files   -->
     <script src="{{ asset('assets/js/jquery-min.js') }}"></script>

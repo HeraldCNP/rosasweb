@@ -6,7 +6,7 @@
     <div id="page-banner-area" class="page-banner">
         <div class="page-banner-title">
             <div class="text-center">
-                <h2>Autoridades</h2>
+                <h2>Documentos</h2>
                 <a href="index.html"><i class="index.html"></i> Inicio</a>
                 <span class="crumbs-spacer"><i class="lni-chevron-right"></i></span>
                 <span class="current">Institución</span>

@@ -64,8 +64,8 @@ class DocumentController extends Controller
             Storage::disk('publicPdf')->put($pdfName, File::get($pdf));
 
             #2.Insertando a la DB
-            $rutaCover = 'uploads/images/covers/'.$coverName;
-            $rutaPdf = 'uploads/documents/'.$pdfName;
+            $rutaCover = 'uploads/uploads/images/covers/'.$coverName;
+            $rutaPdf = 'uploads/uploads/documents/'.$pdfName;
             $image = new Document();
             $image->title = $request->title;
             $image->cover = $rutaCover;

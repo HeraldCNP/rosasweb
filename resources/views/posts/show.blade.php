@@ -47,7 +47,7 @@
                         @endif
                         <div class="content">
                             <h2>
-                                <a href="single-blog.html">{{ $post->title }}</a>
+                                <a href="{{ $post->url }}">{{ $post->title }}</a>
                             </h2>
                             <ul class="post-meta">
                                 <li>{{ optional($post->published_at)->format('M d') }}</li>
@@ -81,7 +81,7 @@
 
                                     <li>
                                         <div class="widget-content">
-                                            @if($po->photos->count() === 1)
+                                            @if($po->photos->count() >= 1)
                                             <div class="widget-thumb">
                                                 <a href="{{ $po->url }}"><img src="{{ url($po->photos->first()->url) }}" alt=""></a>
                                             </div>
